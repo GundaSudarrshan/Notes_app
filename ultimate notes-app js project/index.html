@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
+    <link rel="stylesheet" href="notes.css" />
+  </head>
+  <body>
+    <section class="main_section">
+      <div class="inputs_container" id="note">
+        <input
+          type="text"
+          id="note_title"
+          placeholder="Take a note..."
+          spellcheck="false"
+          readonly
+        />
+
+        <div class="note_features">
+          <div
+            spellcheck="false"
+            id="note_content"
+            contenteditable="true"
+            class="note_content"
+          >
+            Note Content Goes here
+          </div>
+
+          <div class="options">
+            <button id="bold" onclick="bold()">
+              <i class="fa-solid fa-bold"></i>
+            </button>
+            <button id="underline-text" onclick="underline()">
+              <i class="fa-solid fa-underline"></i>
+            </button>
+            <button id="copy-text" onclick="copy()">
+              <i class="fa-solid fa-copy"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="notes_display"></div>
+    </section>
+    <div class="modal-view"></div>
+    <script src="notes.js"></script>
+  </body>
+</html>
