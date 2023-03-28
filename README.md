@@ -1,6 +1,6 @@
-### Note Taking APP
+### Google Keep Clone (Note Taking APP)
 
-This is a simple Note taking web application that has the following **features** ⚙️ with respect to an user.
+This is a simple Google Keep Clone (Note Taking) web application that has the following **features** ⚙️ with respect to an user.
 
 ⚙️ User can create a note.
 

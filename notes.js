@@ -7,6 +7,7 @@ let modal = document.querySelector(".modal");
 
 const inputText = document.getElementById("input-text");
 const btnMakeBold = document.getElementById("bold");
+const btnMakeItalic = document.getElementById("italic");
 const btnUnderline = document.getElementById("underline");
 const btnCopyText = document.getElementById("copy-text");
 
@@ -14,6 +15,11 @@ function bold() {
   const selectedText = window.getSelection.toString();
   document.execCommand("bold");
   console.log(selectedText.toString());
+}
+function italic() {
+  const selectedText = window.getSelection.toString();
+  document.execCommand("italic");
+  // console.log(selectedText.toString());  check for working
 }
 function underline() {
   const selectedText = window.getSelection.toString();
@@ -122,6 +128,7 @@ let displayNotes = () => {
         let modalContent = document.createElement("div");
         let modalButtons = document.createElement("div");
         let modalBoldButton = document.createElement("button");
+        let modalItalicButton = document.createElement("button");
         let modalUnderlineButton = document.createElement("button");
         let modalCopyButton = document.createElement("button");
         let modalSave = document.createElement("button");
@@ -135,10 +142,12 @@ let displayNotes = () => {
         modalDiv.classList.add("modal-div");
         modalButtons.classList.add("modal-buttons");
         modalBoldButton.classList.add("modal-bold");
+        modalItalicButton.classList.add("modal-italic");
         modalUnderlineButton.classList.add("modal-underline");
         modalCopyButton.classList.add("modal-copy");
         modalSave.classList.add("modal-save");
         modalButtons.appendChild(modalBoldButton);
+        modalButtons.appendChild(modalItalicButton);
         modalButtons.appendChild(modalUnderlineButton);
         modalButtons.appendChild(modalCopyButton);
         modalButtons.appendChild(modalSave);
@@ -154,11 +163,13 @@ let displayNotes = () => {
         document.querySelector(".main_section").style.display = "none";
 
         modalBoldButton.innerHTML = `<i class="fa-solid fa-bold"></i>`;
+        modalItalicButton.innerHTML = `<i class="fa-solid fa-italic"></i>`;
         modalUnderlineButton.innerHTML = `<i class="fa-solid fa-underline"></i>`;
         modalCopyButton.innerHTML = `<i class="fa-solid fa-copy"></i>`;
         modalSave.innerHTML = "save";
 
         modalBoldButton.addEventListener("click", bold);
+        modalItalicButton.addEventListener("click", italic);
         modalUnderlineButton.addEventListener("click", underline);
         modalCopyButton.addEventListener("click", copy);
         modalSave.addEventListener("click", function () {
